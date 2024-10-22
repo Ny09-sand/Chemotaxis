@@ -5,13 +5,12 @@ void setup(){
   for ( int i= 0 ; i <bacterium.length;i++){ 
     bacterium[i]=new chemotaxis(10,2,3);
     
-    
 }} 
 void draw(){
   background(160,160,50); 
   for ( int i= 0 ; i <bacterium.length;i++){ 
-    bacterium[i].jiglr(); 
     bacterium[i].show(); 
+    bacterium[i].if_mouse_pressed(); 
     //bacterium[i].chase();
 
   }}
@@ -41,9 +40,18 @@ class chemotaxis{
   } 
   void if_mouse_pressed(){ 
     if (mousePressed){
+       posx=mouseX; 
+       posy=mouseY; 
      if (posx>str){ 
        str+=(int)(Math.random()*5-2);
-     }else if( posx<str
+     } if( posx<str){
+       str-=(int)(Math.random()*5-2);
+     } 
+     if (posy>ytr){
+       ytr+=(int)(Math.random()*5-2);
+     }if (posy<ytr){
+       ytr-=(int)(Math.random()*5-2);
+     }
     }
   } 
 } 

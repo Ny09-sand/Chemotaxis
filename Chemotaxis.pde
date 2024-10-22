@@ -1,7 +1,7 @@
 chemotaxis [] bacterium; 
 void setup(){ 
-  size(500,500); 
-  bacterium= new chemotaxis[15]; 
+  size(1250,600); 
+  bacterium= new chemotaxis[45]; 
   for ( int i= 0 ; i <bacterium.length;i++){ 
     bacterium[i]=new chemotaxis(10,2,3);
     
@@ -20,8 +20,8 @@ class chemotaxis{
     jiggle=jig; 
     xspeed=x; 
     yspeed=y; 
-    str=(int)(Math.random()*500)+1; 
-    ytr=(int)(Math.random()*500)+1; 
+    str=(int)(Math.random()*1250)+1; 
+    ytr=(int)(Math.random()*600)+1; 
     posx=mouseX; 
     posy=mouseY; 
     WAAZAAA=abs(posx-str); 
@@ -43,17 +43,31 @@ class chemotaxis{
        posx=mouseX; 
        posy=mouseY; 
      if (posx>str){ 
-       str+=(int)(Math.random()*5-2);
+       str-=(int)(Math.random()*30-2);
      } if( posx<str){
-       str-=(int)(Math.random()*5-2);
+       str+=(int)(Math.random()*30-2);
      } 
      if (posy>ytr){
-       ytr+=(int)(Math.random()*5-2);
+       ytr-=(int)(Math.random()*30-2);
      }if (posy<ytr){
-       ytr-=(int)(Math.random()*5-2);
+       ytr+=(int)(Math.random()*30-2);
+     }
+    } else{
+      posx=mouseX; 
+       posy=mouseY; 
+     if (posx>str){ 
+       str+=(int)(Math.random()*6-2);
+     } if( posx<str){
+       str-=(int)(Math.random()*6-2);
+     } 
+     if (posy>ytr){
+       ytr+=(int)(Math.random()*6-2);
+     }if (posy<ytr){
+       ytr-=(int)(Math.random()*6-2);
      }
     }
   } 
 } 
+
 
 

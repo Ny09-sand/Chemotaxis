@@ -54,17 +54,11 @@ class chemotaxis{
        str+=(int)(Math.random()*6-2);
      } if( posx<str){
        str-=(int)(Math.random()*6-2);
-     } else { 
-    randoms= (int)(Math.random()*2 -1 ) ; 
-    ytr+=(randoms)(int)(Math.random()*6-2); 
-} 
+     } 
      if (posy>ytr){
        ytr+=(int)(Math.random()*6-2);
      }if (posy<ytr){
        ytr-=(int)(Math.random()*6-2);
-     } else {
-    randoms= (int)(Math.random()*2 -1 ) ; 
-    str+=(randoms)(int)(Math.random()*6-2);  }
-    }
+     } 
 }}
 

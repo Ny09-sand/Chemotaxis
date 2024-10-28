@@ -18,7 +18,7 @@ void draw(){
 
   }}
 class chemotaxis{
-  int jiggle, xspeed,yspeed,posx,posy,str,ytr,WAAZAAA,WEEE,colors,colorz,colorss; 
+  int jiggle, xspeed,yspeed,posx,posy,str,ytr,colors,colorz,colorss; 
   chemotaxis(int jig, int x, int y ){ 
     jiggle=jig; 
     xspeed=x; 
@@ -27,25 +27,12 @@ class chemotaxis{
     ytr=(int)(Math.random()*600)+1; 
     posx=mouseX; 
     posy=mouseY; 
-    WAAZAAA=abs(posx-str); 
-    WEEE=abs(posy-str);
     colors=(int)(Math.random()*256+1);
     colorz=(int)(Math.random()*256+1);
     colorss=(int)(Math.random()*256+1);
   } 
-  void jiglr(){ 
-    jiggle*=-1; 
-  } 
-  void sets(){ 
-    str=(int)(Math.random()*500)+1; 
-    ytr=(int)(Math.random()*500)+1; 
-  } 
-  void jagle(){ if (posx==str && posy==ytr){
-      colors=(int)(Math.random()*256+1);
-      colorz=(int)(Math.random()*256+1);
-      colorss=(int)(Math.random()*256+1);
-      fill(colors,colorz,colorss); 
-    }} 
+ 
+ 
   void show(){ 
   
     ellipse(str+jiggle,ytr+jiggle,20,20);

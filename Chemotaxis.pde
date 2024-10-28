@@ -18,12 +18,13 @@ void draw(){
 
   }}
 class chemotaxis{
-  int jiggle, xspeed,yspeed,posx,posy,str,ytr,colors,colorz,colorss; 
+  int jiggle, xspeed,yspeed,posx,posy,str,ytr,colors,colorz,colorss,randoms; 
   chemotaxis(int jig, int x, int y ){ 
     jiggle=jig; 
     xspeed=x; 
     yspeed=y; 
     str=(int)(Math.random()*1250)+1; 
+    randoms= (int)(Math.random()*2 -1 ) ; 
     ytr=(int)(Math.random()*600)+1; 
     posx=mouseX; 
     posy=mouseY; 
@@ -53,12 +54,17 @@ class chemotaxis{
        str+=(int)(Math.random()*6-2);
      } if( posx<str){
        str-=(int)(Math.random()*6-2);
-     } 
+     } else { 
+    randoms= (int)(Math.random()*2 -1 ) ; 
+    ytr+=(randoms)(int)(Math.random()*6-2); 
+} 
      if (posy>ytr){
        ytr+=(int)(Math.random()*6-2);
      }if (posy<ytr){
        ytr-=(int)(Math.random()*6-2);
-     }
+     } else {
+    randoms= (int)(Math.random()*2 -1 ) ; 
+    str+=(randoms)(int)(Math.random()*6-2);  }
     }
 }}
 

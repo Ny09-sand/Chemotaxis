@@ -1,21 +1,42 @@
-body {
-    background-color: rgb(200,200,200);
-    color: rgb(0,0,0);
-    font-family: "Open Sans", sans-serif;
-    text-align: left;
+starfield [] stars ; 
+void setup(){
+  size(750,750); 
+ stars = new starfield [200]; 
+ for ( int i = 0 ; i < stars.length; i ++ ) { 
+   if (i%10==0){ 
+     stars[i]=new Oddballz(); 
+ } 
+ stars[i] = new starfield(); 
 }
-
-#content {
-    display: block;
-    margin-left: auto;
-    margin-right: auto
 }
-
-header {
-	
+void draw() { 
+  for ( int i = 0 ; i < stars.length; i ++ ) {
+    stars[i].show();
+  }
+} 
+class starfield{ 
+  float x, y ,  angel, speed ; 
+  starfield() {
+    x=(float) mouseX; 
+    y=(float) mouseY;
+    angel = (float)( Math.random()*( 2 * PI ) +1) ;
+    speed=(float) (Math.random()*40 ); 
+  }
+ 
+  void show (){ 
+   
+    rect (x + (float)Math.cos(angel) * speed, y + (float)Math.sin(angel) * speed, 10.0 ,10.0 ); 
+  } 
 }
-
-footer {
-	font-style: italic;
-	font-size: 90%;
-}
+class Oddballz extends starfield { 
+  Oddballz() { 
+    x = (int)( Math.random()* 750)+1; 
+    y = (int)( Math.random()* 750)+1; 
+    angel = (float)( Math.random()*( 2 * PI ) +1) ;
+    speed=(float) (Math.random()*40 ); 
+  } 
+  void shows() { 
+    rect (x + (float)Math.cos(angel) * speed, y + (float)Math.sin(angel) * speed, 10.0 ,10.0 ); 
+  } 
+} 
+  

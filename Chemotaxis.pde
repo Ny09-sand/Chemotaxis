@@ -1,5 +1,4 @@
 chemotaxis [] bacterium; 
-
 void setup(){ 
   size(1250,600); 
   bacterium= new chemotaxis[100]; 
@@ -34,7 +33,7 @@ class chemotaxis{
  
  
   void show(){ 
-  
+    fill(colors,colorz,colorss) ;
     ellipse(str+jiggle,ytr+jiggle,20,20);
   } 
   void if_mouse_pressed(){ 
@@ -42,7 +41,9 @@ class chemotaxis{
        posx=mouseX; 
        posy=mouseY; 
        str+=(int)(Math.random()*1000-500);
-     
+       colors=(int)(Math.random()*256+1);
+       colorz=(int)(Math.random()*256+1);
+       colorss=(int)(Math.random()*256+1);
        ytr+=(int)(Math.random()*1000-500);
                                        
      }
@@ -53,11 +54,14 @@ class chemotaxis{
        str+=(int)(Math.random()*6-2);
      } if( posx<str){
        str-=(int)(Math.random()*6-2);
+     } else { 
+       str-=(int)(Math.random()*6-3);
      } 
      if (posy>ytr){
        ytr+=(int)(Math.random()*6-2);
      }if (posy<ytr){
        ytr-=(int)(Math.random()*6-2);
-     }
+     }else { 
+       ytr-=(int)(Math.random()*6-3);}
     }
 }}
